@@ -18,12 +18,10 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day) {
   const getDay= state.days.filter(days => days.name === day);
-  if (!state.appointments || getDay.length === 0) {
+  if (!state.interviewers || getDay.length === 0) {
     return [];
   }
-  console.log('getDay', getDay);
   const interviewersArray = Object.values(state.interviewers);
   const interviewersRes = interviewersArray.filter(interviewersArray=> getDay[0].interviewers.includes(interviewersArray.id));
-  console.log('interviewerresult',interviewersRes);
   return interviewersRes;
 }

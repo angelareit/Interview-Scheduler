@@ -10,6 +10,7 @@ export default function Form(props) {
   const handleReset = function() {
     setStudent("");
     setInterviewer(null);
+    props.onSave(student, interviewer);
   }
   const handleCancel = function() {
     handleReset();

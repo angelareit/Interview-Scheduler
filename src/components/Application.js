@@ -16,14 +16,17 @@ export default function Application(props) {
     interviewers: {}
   });
 
-  const newArr = [1, 2, 3];
-  newArr.map(val => { return val * 2 });
-
   const dailyAppointments = getAppointmentsForDay(state, state.currentDay);
   const schedule = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
     const interviewers = getInterviewersForDay(state, state.currentDay);
-    return <Appointment {...appointment} key={appointment.id} interview={interview} interviewers={interviewers} />
+    return <Appointment {...appointment}
+      key={appointment.id}
+      interview={interview}
+      interviewers={interviewers}
+      bookInterview={bookInterview}
+      deleteInterview={deleteInterview}
+    />
   }
   );
 
@@ -40,6 +43,48 @@ export default function Application(props) {
     });
 
   }, []);
+
+  function bookInterview(id, interview) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    setState({ ...state, appointments });
+
+
+    Promise.all([
+      Axios.put(`http://localhost:8001/api/appointments/${id}`, { interview }),
+    ]).then((all) => {
+      setState(prev => ({ ...prev }));
+    });
+
+  }
+
+  function deleteInterview(id, interview) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+    console.log(appointment);
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    console.log(appointments);
+    setState({ ...state, appointments });
+
+
+    Promise.all([
+      Axios.delete(`http://localhost:8001/api/appointments/${id}`),
+    ]).then(() => {
+      setState(prev => ({ ...prev }));
+    });
+
+  }
 
 
   return (
