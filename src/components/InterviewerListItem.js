@@ -1,12 +1,12 @@
 import React from "react";
 import classNames from "classnames";
 
+
 import "components/InterviewerListItem.scss";
 
 
 export default function InterviewerListItem(props) {
   let buttonClass = classNames('interviewers__item', { 'interviewers__item--selected ': props.selected });
-  console.log('PROPS.setinterviewer:', props.setInterviewer);
 
   return (
     <li className={buttonClass} onClick={props.setInterviewer}>
