@@ -12,7 +12,7 @@ export default function useApplicationData() {
   });
 
   const setDay = day => setState({ ...state, currentDay: day });
-  
+
   useEffect(() => {
     Promise.all([
       Axios.get('http://localhost:8001/api/days'),
@@ -36,12 +36,30 @@ export default function useApplicationData() {
     };
 
 
-    return Axios.put(`http://localhost:8001/api/appointments/${id}`, { interview }).then((all) => {
-      setState({ ...state, appointments });
-    });
+    return Axios.put(`http://localhost:8001/api/appointments/${id}`, { interview })
+      .then((all) => {
+        setState({ ...state, appointments,  days: updateSpots(state, appointments) });
+      });
+
   }
 
-  function deleteInterview(id, interview) {
+  const updateSpots = function(state, appointments) {
+
+    const updatedDays = [...state.days];
+    console.log('new', state.days);
+
+    return updatedDays.map(day => {
+
+      const appointmentSlots = Object.values(appointments).filter(item => day.appointments.includes(item.id));
+      const availableSpots = appointmentSlots.filter(item => item.interview === null).length;
+      return { ...day, spots: availableSpots };
+
+    });
+  };
+
+
+
+  function deleteInterview(id) {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -53,10 +71,12 @@ export default function useApplicationData() {
     };
     console.log(appointments);
 
+    //updateSpots(state, appointments);
+
 
 
     return Axios.delete(`http://localhost:8001/api/appointments/${id}`).then(() => {
-      setState({ ...state, appointments });
+      setState({ ...state, appointments,  days: updateSpots(state, appointments) });
     });
 
   }

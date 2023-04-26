@@ -41,6 +41,6 @@ export default function useVisualMode(initial) {
     }
   }
 
-  return { mode: history[history.length - 1], transition, back, history };
+  return { mode: history[history.length - 1], transition, back};
 }
 

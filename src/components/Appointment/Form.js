@@ -7,14 +7,19 @@ export default function Form(props) {
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
-  const handleReset = function() {
+  const reset= function()
+  {
     setStudent("");
     setInterviewer(null);
+  }
+
+  const handleSave = function() {
+    reset();
     props.onSave(student, interviewer);
   }
-  
+
   const handleCancel = function() {
-    handleReset();
+    reset();
     props.onCancel();
   }
 
@@ -44,7 +49,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={handleCancel}>Cancel</Button>
-          <Button confirm onClick={handleReset}>Save</Button>
+          <Button confirm onClick={handleSave}>Save</Button>
         </section>
       </section>
     </main>

@@ -5,6 +5,7 @@ export function getAppointmentsForDay(state, day) {
   }
   const appointmentsArray = Object.values(state.appointments);
   const appointmentsRes = appointmentsArray.filter(appointmentsArray => filteredAppointments[0].appointments.includes(appointmentsArray.id));
+  console.log(appointmentsRes);
   return appointmentsRes;
 }
 
