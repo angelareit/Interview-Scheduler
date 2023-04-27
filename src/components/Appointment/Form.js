@@ -14,8 +14,8 @@ export default function Form(props) {
   }
 
   const handleSave = function() {
-    reset();
-    //  props.onSave(student, interviewer);
+    /* reset();
+    props.onSave(student, interviewer); */
     validate();
   }
 
@@ -34,7 +34,8 @@ export default function Form(props) {
       setError("Please select an interviewer");
       return;
     }
-
+    setError("");
+    reset();
     props.onSave(student, interviewer);
   }
 
