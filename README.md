@@ -4,13 +4,13 @@ Interview Scheduler is a single page application (SPA) built using React. Users 
 
 Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the scheduler API used in this project;
 
-###adding interviews
+### adding interviews
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Add-Interviewer.gif?raw=true)
 
-###editing interviews
+### editing interviews
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Edit-Interviewer.gif?raw=true)
 
-###deleting interviews
+### deleting interviews
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Delete-Interviewer.gif?raw=true
 
 ## Setup
