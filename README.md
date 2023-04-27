@@ -13,6 +13,15 @@ Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the 
 ### deleting interviews
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Delete-Interviewer.gif?raw=true)
 
+### Technical Specifications
+  - React
+  - Webpack, Babel
+  - Axios, WebSockets
+  - Axios
+  - Storybook, Webpack Dev Server, Jest, Testing Library
+The Scheduler client application created using Create React App. Express is the basis for the Scheduler API server application.
+
+Both servers run concurrently; requests are proxied from the Webpack development server to the API server.
 ## Setup
 
 Install dependencies with `npm install`.
