@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-Interview Scheduler is a single page application (SPA) built using React. Users can view, book, edit and delete interviews within certain days available. Data is persisted by the API server using a PostgreSQL database. The client application communicates with an API server over HTTP, using the JSON format. Jest tests and cyprus are used for end-to-end and integration testing.
+Interview Scheduler is a single page application (SPA) built using React. Users can view, book, edit, and delete interviews within certain days available. Data is persisted by an API server using a PostgreSQL database. The client application communicates with an API server over HTTP, using the JSON format. Jest and Cyprus are used for end-to-end and integration testing.
 
 Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the scheduler API used in this project;
 
