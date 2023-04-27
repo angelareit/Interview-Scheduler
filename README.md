@@ -2,7 +2,7 @@
 
 Interview Scheduler is a single page application (SPA) built using React. Users can view, book, edit, and delete interviews within certain days available. Data is persisted by an API server using a PostgreSQL database. The client application communicates with an API server over HTTP, using the JSON format. Jest and Cyprus are used for end-to-end and integration testing.
 
-Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the scheduler API used in this project;
+Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the API used in this project.
 
 ### adding interviews
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Add-Interviewer.gif?raw=true)
@@ -11,7 +11,7 @@ Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the 
 ![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Edit-Interviewer.gif?raw=true)
 
 ### deleting interviews
-![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Delete-Interviewer.gif?raw=true
+![image](https://github.com/angelareit/Interview-Scheduler/blob/master/docs/pics/Delete-Interviewer.gif?raw=true)
 
 ## Setup
 
