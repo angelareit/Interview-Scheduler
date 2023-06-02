@@ -19,7 +19,8 @@ Please see [scheduler api](https://github.com/angelareit/scheduler-api) for the 
   - Axios, WebSockets
   - Axios
   - Storybook, Webpack Dev Server, Jest, Testing Library
-The Scheduler client application created using Create React App. Express is the basis for the Scheduler API server application.
+  
+The Scheduler client application is created using Create React App. Express is the basis for the Scheduler API server application.
 
 Both servers run concurrently; requests are proxied from the Webpack development server to the API server.
 ## Setup
